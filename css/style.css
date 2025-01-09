@@ -179,6 +179,10 @@ body {
     display:block;
 }
 
+.side-bar a:last-child {
+    padding-bottom: 0.5rem;
+}
+
 @media only screen and (max-width: 768px) {
     h2,h3,h4,h5,h6,p {
         font-size: .8rem;
