@@ -1,6 +1,5 @@
 $(document).ready(function(){
     console.log("main.js")
-    console.log("phoneEmail = ", $('#phoneEmail'))
     setTimeout(function() { $("#phone").css('visibility','visible'); }, 1000);
     setTimeout(function() { $("#email").css('visibility','visible'); }, 1250);
     setTimeout(function() { $("#download").css('visibility','visible'); }, 1500);
@@ -27,14 +26,29 @@ $(document).ready(function(){
             }
             else {
                 if(k < entries[i][1].length) {
-                    // console.log("entries[i][1][k] = ", entries[i][1][k])
+                    console.log("entries[i][0] = ", entries[i][0])
                     if(m < entries[i][1][k].length && m==0) {
-                        $(`#${entries[i][0].toLowerCase()}`).append(`<p>${entries[i][1][k][m]}</p>`)
-                        m++
+                        if(entries[i][0]=="PROJECTS") {
+                            console.log("YESSSS")
+                            $(`#${entries[i][0].toLowerCase()}`).append(`<a href="https://womensworldcupwizard-33220a25d89f.herokuapp.com/">${entries[i][1][k][m]}</a>`)
+                            m++;
+                        }
+                        else {
+                            console.log("NOOOOO")
+                            $(`#${entries[i][0].toLowerCase()}`).append(`<p>${entries[i][1][k][m]}</p>`)
+                            m++;
+                        }
                     }
                     else if(m < entries[i][1][k].length && m!=0) {
-                        $(`#${entries[i][0].toLowerCase()}`).find("p:last-child").append(`${entries[i][1][k][m]}`);
-                        m++;
+                        if(entries[i][0]=="PROJECTS") {
+                            $(`#${entries[i][0].toLowerCase()}`).find("a:last-child").append(`${entries[i][1][k][m]}`);
+                            m++;
+                        }
+                        else {
+                            $(`#${entries[i][0].toLowerCase()}`).find("p:last-child").append(`${entries[i][1][k][m]}`);
+                            m++;
+                        }
+                        
                     }
                     else {
                         k++;
@@ -52,5 +66,5 @@ $(document).ready(function(){
         else {
             clearInterval(timer);
         }
-    }, 15);
+    }, 10);
 });
