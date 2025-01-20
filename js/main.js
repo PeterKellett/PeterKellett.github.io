@@ -7,7 +7,7 @@ $(document).ready(function(){
     const side_bar = {
         "QUALIFICATIONS": ["Full Stack Web Developer", 
             "Wix Velo certified Developer", 
-            "BEng Electrical Engineering", 
+            "BEng Tech Electrical Engineering", 
             "Electrician"], 
         "SKILLS": ["HTML, CSS, JS",
             "dc & Crossfilter", 
