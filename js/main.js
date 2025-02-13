@@ -25,7 +25,9 @@ $(document).ready(function(){
             "gSheets", 
             "Fault finding / troubleshooting"], 
         "PROJECTS": ["World Cup Wizard", 
-            "EPOS"], 
+            "EPOS",
+            "Tom's Place",
+            "The Pop Up Irish Pub"], 
         "REFERENCES": ["Padraig Cahill - Opus Web Design", "087 966 3260", 
             "Cathal Dolan - gizagig", "086 679 4786"]}
     var entries = Object.entries(side_bar);
@@ -45,15 +47,26 @@ $(document).ready(function(){
             }
             else {
                 if(k < entries[i][1].length) {
-                    console.log("entries[i][0] = ", entries[i][0])
                     if(m < entries[i][1][k].length && m==0) {
                         if(entries[i][0]=="PROJECTS") {
-                            console.log("YESSSS")
-                            $(`#${entries[i][0].toLowerCase()}`).append(`<a href="https://womensworldcupwizard-33220a25d89f.herokuapp.com/">${entries[i][1][k][m]}</a>`)
-                            m++;
+                            if(entries[i][1][k] == "World Cup Wizard") {
+                                $(`#${entries[i][0].toLowerCase()}`).append(`<a href="https://womensworldcupwizard-33220a25d89f.herokuapp.com/">${entries[i][1][k][m]}</a>`)
+                                m++;
+                            }
+                            else if(entries[i][1][k] == "EPOS") {
+                                $(`#${entries[i][0].toLowerCase()}`).append(`<a href="https://ipuhael-epos-8b5f0c382be3.herokuapp.com/">${entries[i][1][k][m]}</a>`)
+                                m++;
+                            }
+                            else if(entries[i][1][k] == "Tom's Place") {
+                                $(`#${entries[i][0].toLowerCase()}`).append(`<a href="https://peterwkellett.wixstudio.com/tomsplace">${entries[i][1][k][m]}</a>`)
+                                m++;
+                            }
+                            else if(entries[i][1][k] == "The Pop Up Irish Pub") {
+                                $(`#${entries[i][0].toLowerCase()}`).append(`<a href="http://thepopupirishpub.com">${entries[i][1][k][m]}</a>`)
+                                m++;
+                            }
                         }
                         else {
-                            console.log("NOOOOO")
                             $(`#${entries[i][0].toLowerCase()}`).append(`<p>${entries[i][1][k][m]}</p>`)
                             m++;
                         }
